@@ -12,6 +12,24 @@ for old, new in replacements:
 print new_string
 
 
+# ****************************************
+
+## example of a list containing lists
+list_example = [
+   ['puppy','dog'], 
+   ['kitten','cat'], 
+   ['cub','bear'], 
+   ['calf','cow'], 
+   ['chick','chicken'], 
+   ['fawn','deer']
+]
+
+# print list_example[0]   ## this will print the first item in the list, which is ['puppy','dog']
+# print list_example[0][0]   ## this will print the first item of the first item in the list, which is 'puppy' 
+# print list_example[0][1]   ## this will print the SECOND item of the first item in the list, which is 'dog' 
+
+# ****************************************
+
 # from string import maketrans
 # intab = "AEGIOST"
 # outtab = "4361057"
@@ -75,26 +93,26 @@ character_replacement_list = []
 # for i in range(1,11):
 # 	print i
 
-# size = 5
-# for i in range(size):
-# 	print('*'*size)
+size = 5
+for i in range(size):
+	print('*'*size)
 
 
 # hollow square with user input
-# print "how wide do you want the hollow square?"
-# height = int(raw_input())
-# print "how tall do you want the hollow square"
-# width = int(raw_input())
+print "how wide do you want the hollow square?"
+height = int(raw_input())
+print "how tall do you want the hollow square"
+width = int(raw_input())
 
-# for i in range(height):
-#     if i == 0:
-#         print '*' * width
-#     elif i == height -1:
-#         print '*' * width
-#     else:
-#         empy_space = ' '
-#         between = '*' + empy_space * (width -2) + '*'
-#         print between
+for i in range(height):
+    if i == 0:
+        print '*' * width
+    elif i == height -1:
+        print '*' * width
+    else:
+        empy_space = ' '
+        between = '*' + empy_space * (width -2) + '*'
+        print between
 
 
 # def triangle(num,t=-1):
@@ -114,20 +132,20 @@ character_replacement_list = []
 
 # hollow square with user input
 
-height = 3
-print "enter text"
-text = raw_input()
-width = len(text)
+# height = 3
+# print "enter text"
+# text = raw_input()
+# width = len(text)
 
-for i in range(height):
-    if i == 0:
-        print ('*' * width) + ('*' * 2) 
-    elif i == height -1:
-        print ('*' * width) + ('*' * 2) 
-    else:
-        empy_space = ' '
-        between = '*' + text + '*'
-        print between
+# for i in range(height):
+#     if i == 0:
+#         print ('*' * width) + ('*' * 2) 
+#     elif i == height -1:
+#         print ('*' * width) + ('*' * 2) 
+#     else:
+#         empy_space = ' '
+#         between = '*' + text + '*'
+#         print between
 
 leet_string = "leet"
 leet_string_as_list = list(leet_string)
@@ -166,3 +184,26 @@ for i in range(0,len(string_to_test)):
    previous = current
 print result
 
+
+
+
+def decrypt_function(encrypted_letter):
+   try:
+      number = encrypted_list.index(encrypted_letter)
+   except ValueError:
+      decrypted_message.append(encrypted_letter)
+   else:
+      decrypted_message.append(decrypted_list[number])
+
+message = "lbh zhfg hayrnea jung lbh unir yrnearq"
+decrypted = "abcdefghijklmnopqrstuvwxyz "
+encrypted = "nopqrstuvwxyzabcdefghijklm "
+message_list = list(message)
+decrypted_list = list(decrypted)
+encrypted_list = list(encrypted)
+decrypted_message = []
+
+for i in range(0,len(message_list)):
+   decrypt_function(message_list[i])
+decrypted_message_string = "".join(decrypted_message)
+print decrypted_message_string
