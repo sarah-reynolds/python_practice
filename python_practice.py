@@ -260,3 +260,10 @@ get_number()
 print y ## y was set to 5 globally in the function, so y will be 5
 
 
+user_input = raw_input("enter a number")
+try:
+  convert_user = int(user_input)
+except ValueError:
+  print "You must enter a number"
+else:
+  print "You entered %d" % convert_user
